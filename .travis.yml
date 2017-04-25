@@ -19,6 +19,9 @@ install:
 - pip install -r requirements-dev.txt
 - pip install -e .[test]
 - pip list
+- pip install flake8 .
+before_script:
+- flake8
 script:
 - py.test --cov mapboxcli --cov-report term-missing
 after_success:
